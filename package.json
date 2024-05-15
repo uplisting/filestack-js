@@ -19,7 +19,7 @@
     "build:main": "npx gulp typescript:main",
     "build:module": "npx gulp typescript:module",
     "build:check": "node scripts/check.js",
-    "webpack": "npx gulp build:webpack",
+    "webpack": "npx gulp build:webpack --openssl-legacy-provider",
     "webpack:profile": "npx webpack --profile --json > .stats.json",
     "webpack:analyze": "npm run webpack:profile && npx webpack-bundle-analyzer .stats.json build/browser/",
     "lint": "eslint --config .eslintrc.js ./src/**/*.ts",
@@ -43,7 +43,6 @@
   "dependencies": {
     "@babel/runtime": "^7.8.4",
     "@filestack/loader": "^1.0.9",
-    "@sentry/minimal": "^6.19.7",
     "abab": "^2.0.6",
     "debug": "^4.3.4",
     "eventemitter3": "^5.0.0",
@@ -80,7 +79,6 @@
     "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-jsdoc": "^40.0.1",
     "gh-pages": "^5.0.0",
     "git-state": "^4.1.0",
     "glob": "^8.1.0",
@@ -140,5 +138,6 @@
       "lcov",
       "text-summary"
     ]
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }

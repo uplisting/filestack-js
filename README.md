@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://www.filestack.com"><img src="https://static.filestackapi.com/filestack-js.svg?refresh" align="center" width="250" /></a>  
+  <a href="https://www.filestack.com"><img src="https://static.filestackapi.com/filestack-js.svg?refresh" align="center" width="250" /></a>
 </p>
 <p align="center">
   <strong>Javascript SDK for the Filestack API and content management system.</strong>
@@ -46,7 +46,6 @@
   - [Node](#node-1)
   - [Browser](#browser)
   - [Error event](#error-event)
-- [Sentry Integration](#sentry-integration)
 - [Versioning](#versioning)
 - [Contributing](#contributing)
 
@@ -55,7 +54,7 @@
 
 * A multi-part uploader powered on the backend by the [Filestack CIN](https://www.filestack.com/products/content-ingestion-network).
 * An interface to the [Filestack Processing Engine](https://www.filestack.com/docs/image-transformations) for transforming assets via URLs.
-* The Filestack Picker - an upload widget for the web that integrates over a dozen cloud providers and provides pre-upload image editing. 
+* The Filestack Picker - an upload widget for the web that integrates over a dozen cloud providers and provides pre-upload image editing.
 
 
 ## Installation
@@ -89,7 +88,7 @@ const client = filestack.init('apikey');
 </script>
 ```
 
-where ```{MAJOR_VERSION}``` is one of the MAJOR versions of the filestack-js ie: 
+where ```{MAJOR_VERSION}``` is one of the MAJOR versions of the filestack-js ie:
 ```HTML
 <script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js" crossorigin="anonymous"></script>
 <script>
@@ -122,9 +121,9 @@ const client = require('filestack-js').init('apikey');
 ```
 
 
-## Module Overview 
+## Module Overview
 
-The `package.json` specifies two separate modules: 
+The `package.json` specifies two separate modules:
 
 * `main` for the CommonJS module (intended for Node runtimes)
 * `browser` for the pre-bundled ES module (intended for browser runtimes)
@@ -143,20 +142,20 @@ Major releases will bo listed (with detailed examples) in releases folder starti
 
 ## Live examples (JSFiddle)
 
-[Upload image](https://jsfiddle.net/gh/get/library/pure/filestack/filestack-js/tree/master/examples/upload)  
-[Multiupload](https://jsfiddle.net/gh/get/library/pure/filestack/filestack-js/tree/master/examples/multiupload)  
-[Open picker](https://jsfiddle.net/gh/get/library/pure/filestack/filestack-js/tree/master/examples/picker)  
-[Open picker in inline mode](https://jsfiddle.net/gh/get/library/pure/filestack/filestack-js/tree/master/examples/picker-inline)  
-[Crop images](https://jsfiddle.net/gh/get/library/pure/filestack/filestack-js/tree/master/examples/crop)  
-[Multiple drop panes](https://jsfiddle.net/gh/get/library/pure/filestack/filestack-js/tree/master/examples/multiple-drop-panes)  
-[Preview](https://jsfiddle.net/gh/get/library/pure/filestack/filestack-js/tree/master/examples/preview)  
-[Import using RequireJS](https://jsfiddle.net/gh/get/library/pure/filestack/filestack-js/tree/master/examples/requirejs)  
-[Retrieve image data](https://jsfiddle.net/gh/get/library/pure/filestack/filestack-js/tree/master/examples/retrieve)  
-[Transform image](https://jsfiddle.net/gh/get/library/pure/filestack/filestack-js/tree/master/examples/transform)  
-[Custom Picker CSS](https://jsfiddle.net/gh/get/library/pure/filestack/filestack-js/tree/master/examples/customization)  
-[Assign file to user](https://jsfiddle.net/gh/get/library/pure/filestack/filestack-js/tree/master/examples/assign-file-to-user)  
+[Upload image](https://jsfiddle.net/gh/get/library/pure/filestack/filestack-js/tree/master/examples/upload)
+[Multiupload](https://jsfiddle.net/gh/get/library/pure/filestack/filestack-js/tree/master/examples/multiupload)
+[Open picker](https://jsfiddle.net/gh/get/library/pure/filestack/filestack-js/tree/master/examples/picker)
+[Open picker in inline mode](https://jsfiddle.net/gh/get/library/pure/filestack/filestack-js/tree/master/examples/picker-inline)
+[Crop images](https://jsfiddle.net/gh/get/library/pure/filestack/filestack-js/tree/master/examples/crop)
+[Multiple drop panes](https://jsfiddle.net/gh/get/library/pure/filestack/filestack-js/tree/master/examples/multiple-drop-panes)
+[Preview](https://jsfiddle.net/gh/get/library/pure/filestack/filestack-js/tree/master/examples/preview)
+[Import using RequireJS](https://jsfiddle.net/gh/get/library/pure/filestack/filestack-js/tree/master/examples/requirejs)
+[Retrieve image data](https://jsfiddle.net/gh/get/library/pure/filestack/filestack-js/tree/master/examples/retrieve)
+[Transform image](https://jsfiddle.net/gh/get/library/pure/filestack/filestack-js/tree/master/examples/transform)
+[Custom Picker CSS](https://jsfiddle.net/gh/get/library/pure/filestack/filestack-js/tree/master/examples/customization)
+[Assign file to user](https://jsfiddle.net/gh/get/library/pure/filestack/filestack-js/tree/master/examples/assign-file-to-user)
 
-Examples can be run locally with: 
+Examples can be run locally with:
 ```
 npm run examples
 ```
@@ -191,7 +190,7 @@ Script (for script tag):
 
 Most tests in this library are expected to interface with actual backend services. Because we like to run tests during development, these services are mocked during unit testing.
 
-All tests are using Jest. 
+All tests are using Jest.
 
 To run units:
 
@@ -218,7 +217,7 @@ localStorage.debug = 'fs:*'
 And then refresh the page.
 
 ### Error event
-The ```upload.error``` event was added to sdk. To obtain every upload request error just add callback to it. 
+The ```upload.error``` event was added to sdk. To obtain every upload request error just add callback to it.
 Error contains details field with responseBody, responseHeaders, code (only when error type is FilestackErrorType.REQUEST)
 
 ```js
@@ -231,10 +230,6 @@ Error contains details field with responseBody, responseHeaders, code (only when
 ```
 
 Upload abort throws an `FilestackError` with type `FilestackErrorType.ABORTED`
-
-## Sentry Integration
-
-If you're using [Sentry](https://sentry.io/welcome/) to monitor your application, Filestack will automatically report upload errors to Sentry, and tag them with helpful diagnostic information via [`@sentry/minimal`](https://github.com/getsentry/sentry-javascript/tree/master/packages/minimal).
 
 ## Versioning
 

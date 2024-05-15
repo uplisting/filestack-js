@@ -13,7 +13,6 @@ module.exports = {
     },
     "plugins": [
         "eslint-plugin-import",
-        "eslint-plugin-jsdoc",
         "@typescript-eslint"
     ],
     "root": true,
@@ -95,9 +94,6 @@ module.exports = {
         ],
         "id-match": "error",
         "import/no-deprecated": "off",
-        "jsdoc/check-alignment": "error",
-        "jsdoc/check-indentation": "off",
-        "jsdoc/newline-after-description": "off",
         "new-parens": "error",
         "no-caller": "error",
         "no-cond-assign": "error",

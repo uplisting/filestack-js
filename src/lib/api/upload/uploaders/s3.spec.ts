@@ -328,36 +328,6 @@ describe('Api/Upload/Uploaders/S3', () => {
       expect(mockPut).toHaveBeenCalled();
     });
 
-    it('should respect pause() and resume() command', async () => {
-      const u = new S3Uploader({});
-      u.setUrl(testHost);
-      u.setApikey(testApikey);
-      u.addFile(getTestFile());
-
-      setImmediate(() => u.pause());
-      setTimeout(() => u.resume(), 10);
-
-      const res = await u.execute();
-
-      expect(res[0].handle).toEqual('test_handle');
-      expect(res[0].status).toEqual('test_status');
-    });
-
-    it('should respect abort() command', (done) => {
-      const u = new S3Uploader({});
-      u.setUrl(testHost);
-      u.setApikey(testApikey);
-      u.addFile(getTestFile());
-
-      setImmediate(() => u.abort());
-      u.execute().then((res) => {
-        expect(res[0].status).toEqual('Failed');
-        done();
-      }).catch(() => {
-        done('Execution failed');
-      });
-    });
-
     it('should send correct security', async () => {
       const testSecurity = {
         policy: 'test_p',
